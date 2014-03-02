@@ -24,7 +24,7 @@ return array(
 
     // Live database info
 	'.com' => array(
-        'server' => 'box894.bluehost.com',
+        'server' => 'localhost',
 		'user' => 'ryanbeli_dbadmin',
 		'password' => '@436StaffordSt',
 		'database' => 'ryanbeli_ryanbelisle',

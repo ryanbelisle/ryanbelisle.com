@@ -30,7 +30,7 @@ return array(
 
         'environmentVariables' => array(
             'siteUrl'        => 'http://ryanbelisle.com/',
-            'fileSystemPath' => '/www/eh12345/',
+            'fileSystemPath' => '/home2/ryanbeli/public_html/ryanbelisle/public/images/',
         ),
     ),
 
