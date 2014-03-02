@@ -46,7 +46,7 @@ $address = "ryan@ryanbelisle.com";
 
 // Example, $e_subject = '$name . ' has contacted you via Your Website.';
 
-$e_subject = 'You\'ve been contacted by ' . $name . '.';
+$e_subject = '[ryanbelisle.com] You\'ve been contacted by ' . $name . '.';
 
 
 // Configuration option.
@@ -71,12 +71,16 @@ if(mail($address, $e_subject, $msg, $headers)) {
 
 	echo "<fieldset>";
 	echo "<div id='success_page'>";
-	echo "<div class='notification success clearfix'><p>Thank you <strong>$name</strong>, your message has been submitted to us.</p></div>";
+	echo "<div class='notification success clearfix'><p>Thanks <strong>$name</strong>, your message has been submitted. I'll get back to you ASAP!</p></div>";
 	echo "</div>";
 	echo "</fieldset>";
 
 } else {
 
-	echo 'ERROR!';
+	echo "<fieldset>";
+	echo "<div id='error_page'>";
+	echo "<div class='notification error clearfix'><p>Sorry <strong>$name</strong>, there was an error submitting your message. Please contact me via <a href='mailto:ryan@ryanbelisle.com'>ryan@ryanbelisle.com</a> instead. I'll get this fixed shortly!</p></div>";
+	echo "</div>";
+	echo "</fieldset>";
 
 }
