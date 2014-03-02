@@ -1,0 +1,59 @@
+{% include "_molecules/doctype" %}
+
+	<head>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+		<link rel="home" href="{{ siteUrl }}" />
+		<meta name="description" content="Form. Responsive HTML5 template.">
+		<meta name="keywords" content="form, responsive, multi-purpose, portfolio, parallax, template, html5, agency">
+		<meta name="author" content="Ryan Belisle">
+		
+		<meta property="og:site_name" content="Ryan Belisle">
+		{% block meta %}{% endblock %}
+
+		<link rel="shortcut icon" href="/images/favicon.png">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->	
+
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400|Montserrat' rel='stylesheet' type='text/css'>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="/css/framework.css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/custom.css">
+	</head>
+
+	<body>
+
+		{% include "_molecules/nav" %}
+	
+		<!-- Begin Main Block -->
+		{% block content %}{% endblock %}
+
+		{% include "_molecules/footer" %}
+
+		<!-- jQuery -->
+		<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- Javascript -->
+		<script src="/js/retina.min.js"></script>
+		<script src="/js/backgroundcheck.min.js"></script>
+		<script src="/js/plugins.min.js"></script>
+		<script src="/js/main.min.js"></script>
+		
+		{% block footerjs %}{% endblock %}
+
+		{% include "_molecules/google" %}
+
+	</body>
+
+</html>

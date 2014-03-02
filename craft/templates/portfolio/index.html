@@ -1,0 +1,96 @@
+{% extends "_layout" %}
+{% set title = "Portfolio" %}
+
+{% block content %}
+
+	<!-- Begin Small Hero Block -->
+	<section class="hero small accent parallax" style="background-image: url(/images/header/header-portfolio.png);">
+
+			<!-- Heading -->
+			<div class="hero-content container">
+				<h1>Portfolio</h1>
+				<h3>Putting in the blood, sweat and tears for great experiences</h3>
+			</div><!-- END -->
+
+			<!-- Button -->
+			<div class="sub-hero container">				
+				<span class="line"></span>
+			</div><!-- END -->
+
+	</section>
+	<!-- End Small Hero Block -->
+
+
+	<!-- Begin Portfolio Block -->
+	<section class="portfolio-block">
+
+		<div class="container">
+
+			<!-- Title -->
+			<div class="row">
+				<div class="center title col-lg-12">
+					<h2>Selected Projects</h2>
+					<p>Full case studies and more projects are coming soon, so stay tuned!</p>
+				</div>
+			</div><!-- END -->		
+
+			<!-- Thumbnails -->
+			<ul class="portfolio-grid">
+
+				{% for entry in craft.entries.section('portfolio').find() %}
+				<!-- Thumbnail -->
+				<li class="thumbnail mix mix_all">
+					<div>
+					<a href="{{ entry.url }}">
+						<img src="{{ entry.thumbnailImage[0].url }}" alt="thumbnail">
+						<div class="projectinfo">
+							<div class="meta">
+								<h4>{{ entry.title }}</h4>
+							</div>
+						</div>
+					</a>
+					</div>
+				</li>
+				{% endfor %}
+
+			</ul>
+			<!-- END -->
+
+		</div>
+		
+	</section>
+	<!-- End Portfolio Block -->
+
+
+	<!-- Begin Dribbble Block -->
+	<section class="portfolio-block light portfolio-dribbble">
+
+		<div class="container">
+
+			<!-- Title -->
+			<div class="row">
+				<div class="center title col-lg-12">
+					<h2>Works in Progress</h2>
+					<p>An inside peek at some things I've been working on</p>
+					<br>
+					<p><a class="button accent-alt" href="http://dribbble.com/ryanbelisle"><i class="fa fa-dribbble"></i> View on Dribbble</a></p>
+				</div>
+			</div><!-- END -->		
+
+			<!-- Thumbnails -->
+			<ul class="portfolio-grid">
+
+				
+
+			</ul>
+			<!-- END -->
+
+		</div>		
+		
+	</section>
+	<!-- End Dribbble Block -->
+
+	{% include "_molecules/calltoaction" with {'ctaRightBtn':'blog'} %}
+
+
+{% endblock %}

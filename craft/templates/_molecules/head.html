@@ -1,0 +1,35 @@
+<head>
+	<meta charset="utf-8">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<link rel="home" href="{{ siteUrl }}" />
+	<meta name="description" content="Ryan is a self-taught Web, UI/UX Designer and Front-end Developer with a passion for building clean, responsive, engaging web experiences for startups, nonprofits, small businesses and everything in between!">
+	<meta name="keywords" content="form, responsive, multi-purpose, portfolio, parallax, template, html5, agency">
+	<meta name="author" content="Ryan Belisle">
+	<meta name="robots" content="index,follow,archive">
+
+	{% block meta %}{% endblock %}
+
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- jQuery -->
+	<script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="/css/framework.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>

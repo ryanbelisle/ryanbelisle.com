@@ -1,0 +1,38 @@
+	<!-- Begin Navigation -->
+	<nav class="mobile">
+
+		<!-- Menu -->
+		<ul class="nav-content clearfix">
+			<li id="magic-line"></li>
+			<li class="first upper {% if craft.request.firstSegment == '' %}current-page{% endif %}">
+				<a href="{{ siteUrl }}">Home</a>
+			</li>
+			<li class="upper {% if craft.request.firstSegment == 'about' %}current-page{% endif %}">
+				<a href="/about">About</a>
+			</li>
+			<li class="upper {% if craft.request.firstSegment == 'portfolio' %}current-page{% endif %}">
+				<a href="/portfolio">Portfolio</a>
+			</li>
+			<li class="upper {% if craft.request.firstSegment == 'blog' %}current-page{% endif %}">
+				<a href="/blog">Blog</a>
+			</li>
+			<li class="last upper {% if craft.request.firstSegment == 'contact' %}current-page{% endif %}">
+				<a href="/contact">Contact Me</a>
+			</li>
+		</ul><!-- END -->
+
+	</nav>
+	<header class="mobile">
+
+		<!-- Logo -->
+		<a href="{{ siteUrl }}" class="site-logo">Ryan <span>Belisle</span></a>
+
+		<!-- Menu Button -->
+		<button type="button" class="nav-button">
+		  <div class="button-bars"></div>
+	    </button><!-- END -->
+
+	</header>
+
+	<div class="sticky-head"></div>
+	<!-- End Navigation -->

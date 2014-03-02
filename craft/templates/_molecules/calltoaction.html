@@ -1,0 +1,30 @@
+
+
+<!-- Begin Call to Action Block -->
+<section class="call-to-action content accent-alt">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="row">
+			<div class="title col-lg-12">
+				<h5>Interested in working together or just want to say hello?</h5>
+				<h2>Let's Talk! I don't bite, but I throw killer combos.</h2>
+				
+			</div>
+		</div><!-- END -->
+
+		<!-- Actions -->
+		<div class="row">
+			<div class="actions padded col-lg-12">
+				<a class="button accent-alt-inv" href="/contact">Contact Me</a>
+				<span class="choice">or</span>
+				{% if ctaRightBtn == 'portfolio' %}
+					<a class="button gray-alt" href="/portfolio">View my Portfolio</a>
+				{% elseif ctaRightBtn == 'blog' %}
+					<a class="button gray-alt" href="/blog">View Blog</a>
+				{% endif %}
+			</div>
+		</div><!-- END -->
+	</div>
+</section>
+<!-- End Call to Action Block -->

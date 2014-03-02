@@ -1,0 +1,204 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% block meta %}
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="{{ entry.title }}">
+	<meta property="og:url" content="{{ entry.url }}">
+	<meta property="og:description" content="{{ entry.subtitle | striptags | trim }}">
+	<meta property="og:image" content="{{ siteUrl | trim('/') }}﻿{{ entry.thumbnailImage[0].url }}">
+	<meta name="twitter:site" content="@r33boot">
+	<meta name="twitter:card" content="photo">
+	<meta name="twitter:creator" content="@r33boot">
+{% endblock %}
+
+{% block content %}
+
+	<!-- Begin Small Hero Block -->
+	<section class="hero small accent parallax" style="background-image: url({{ entry.headerImage[0].url }});">
+
+		<!-- Heading -->
+		<div class="hero-content container">
+			<h1>{{ entry.title }}</h1>			
+			<h3>{{ entry.subtitle }}</h3>
+		</div><!-- END -->
+
+		<!-- Navigation -->
+		<div class="sub-hero container">
+			<ul class="project-nav">
+				<!-- <li class="prev-project clearfix"><a href="#">Previous</a></li> -->
+				<li class="all-project clearfix"><a href="/portfolio"><i class="icon keypad white"></i></a></li>
+				<!-- <li class="next-project clearfix"><a href="#">Next</a></li> -->
+			</ul>
+		</div><!-- END -->
+
+	</section>
+	<!-- End Small Hero Block -->
+
+
+	<!-- Begin Overview Block -->
+	<section class="overview-block content container">
+		<div class="row">
+
+			<div class="col-md-4 overview-block-col">
+				<h2>The Problem.</h2>
+				{{ entry.problem }}
+			</div>
+			<div class="col-md-4 overview-block-col">
+				<h2>The Solution.</h2>
+				{{ entry.solution }}
+			</div>
+			<div class="col-md-4 overview-block-col">
+				<h2>My Role.</h2>
+				{{ entry.role }}
+			</div>
+
+		</div>
+	</section>
+	<!-- End Overview Block -->
+
+
+	{% for block in entry.projectBody %}
+	<section class="center project-block {{ block.projectGroupBg }} content">
+
+		<div class="container">	
+
+			{% if block.type == "projectGroup" %}
+
+				<!-- Title -->
+				<div class="row">
+					<div class="title center col-sm-12">
+						<h4>{{ block.projectGroupTitle }}</h4>
+					</div>
+				</div><!-- END-->
+				<!-- Features -->	
+				<div class="row center">
+					<div class="col-sm-12">
+					{% if block.projectGroupImage | length %}
+		        		{% for image in block.projectGroupImage %}
+		            	<img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.filename }}">
+		            	{% endfor %}
+		        	{% endif %}
+					</div>
+				</div><!-- END -->
+			
+			{% elseif block.type == "projectGroup2col" %}
+			
+				<!-- Title -->
+				<div class="row">
+					<div class="title center col-sm-12">
+						<h4>{{ block.projectGroupTitle }}</h4>
+					</div>
+				</div><!-- END-->
+				<!-- Features -->
+				<div class="row center">
+				{% if block.projectGroupImage | length %}
+		        	{% for image in block.projectGroupImage %}
+					<div class="col-sm-6">
+					   	<img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="{{ image.filename }}">
+					</div>
+		            {% endfor %}
+		        {% endif %}
+				</div><!-- END -->
+			{% endif %}
+
+		</div>
+
+	</section>
+	{% endfor %}
+
+
+	<!-- Begin Overview Block -->
+	<section class="overview-block center content container">
+		<div class="row">
+
+			<div class="col-sm-8 col-sm-offset-2">
+				{{ entry.outro }}
+			</div>
+
+		</div>
+	</section>
+	<!-- End Overview Block -->
+
+
+	<!-- Begin Blog Block -->
+	<section class="project-share-block content container">
+		<div class="row">
+
+			<!-- Begin Posts -->
+			<div class="col-md-12">
+
+				<div class="post-share post-share-project">
+					<ul class="post-share-list">
+						<li><a href="https://twitter.com/intent/tweet?url={{ entry.url | url_encode }}&text={{ entry.title | url_encode }} by @r33boot" class="button accent-alt sharrre-btn popup"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.facebook.com/sharer/sharer.php?u={{ entry.url  | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://plus.google.com/share?url={{ entry.url  | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ entry.url  | url_encode }}&title={{ entry.title | url_encode }}&summary={{ entry.subtitle | striptags | trim | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="http://pinterest.com/pin/create/button/?url={{ entry.url  | url_encode}}&media={{ siteUrl | trim('/') }}﻿{{ entry.thumbnailImage[0].url | url_encode }}&description={{ entry.title | url_encode }}: {{ entry.subtitle | striptags | trim | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="mailto:?subject={{ entry.title | url_encode }}&body={{ entry.url  | url_encode}}" class="button accent-alt sharrre-btn popup"><i class="fa fa-envelope"></i></a></li>
+					</ul>
+				</div>
+
+			</div><!-- END -->			
+
+		</div>
+	</section>
+	<!-- End Blog Block -->
+
+
+	<!-- Begin Overview Block -->
+	<section class="project-nav-block center light">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-12">
+					<ul class="project-nav">
+						<!-- <li class="prev-project clearfix"><a href="#">Previous</a></li> -->
+						<li class="all-project clearfix"><a href="/portfolio" class="gray"><i class="icon keypad gray"></i></a></li>
+						<!-- <li class="next-project clearfix"><a href="#">Next</a></li> -->
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Overview Block -->
+
+	{% include "_molecules/calltoaction" with {'ctaRightBtn':'blog'} %}
+	
+
+{% endblock %}
+
+{% block footerjs %}
+<script type="text/javascript">
+	var popupCenter = function(url, title, w, h) {
+			// Fixes dual-screen position                         Most browsers      Firefox
+			var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+			var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+
+			var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+			var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+			var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+			var top = ((height / 3) - (h / 3)) + dualScreenTop;
+
+			var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+			// Puts focus on the newWindow
+			if (window.focus) {
+				newWindow.focus();
+			}
+	};
+
+	jQuery(document).ready(function($){
+
+		$('.post-share a.popup').on('click', function(e){
+			var _this = $(this);
+			popupCenter(_this.attr('href'), _this.find('.text').html(), 580, 470);
+			e.preventDefault();
+		});
+
+	});							
+
+</script>
+{% endblock %}

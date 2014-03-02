@@ -1,0 +1,128 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+	<!-- Begin Large Hero Block -->
+	<section class="hero home-hero accent parallax" style="background-image: url(/images/header/header-home.png);">
+
+		<!-- Heading -->
+		<div class="hero-content container">
+			<h2><em>Konnichiwa, Ryan Belisle at your service.</em></h2>
+			<h1>Ryan is a self-taught Web, UI/UX Designer and Front-end Developer with a passion for building clean, responsive, engaging web experiences for startups, nonprofits, small businesses and everything in between!</h1>
+		</div><!-- END -->
+
+		<!-- Button -->
+		<div class="sub-hero container">
+			<span class="line"></span>
+			<a href="/about" class="button white">Learn More About Me</a>
+		</div><!-- END -->
+
+	</section>
+	<!-- End Large Hero Block -->	
+
+
+	<!-- Begin Portfolio Block -->
+	<section class="portfolio-block">
+
+		<div class="container">
+
+			<!-- Title -->
+			<div class="row">
+				<div class="center title col-lg-12">
+					<h2>Selected Projects</h2>
+					<p>Full case studies and more projects are coming soon, so stay tuned!</p>
+				</div>
+			</div><!-- END -->		
+
+			<!-- Thumbnails -->
+			<ul class="portfolio-grid">
+
+				{% for entry in craft.entries.section('portfolio').find() %}
+				<!-- Thumbnail -->
+				<li class="thumbnail mix mix_all">
+					<div>
+					<a href="{{ entry.url }}">
+						<img src="{{ entry.thumbnailImage[0].url }}" alt="thumbnail">
+						<div class="projectinfo">
+							<div class="meta">
+								<h4>{{ entry.title }}</h4>
+							</div>
+						</div>
+					</a>
+					</div>
+				</li>
+				{% endfor %}
+
+			</ul>
+			<!-- END -->
+			
+			<div class="center padded">
+				<p><a class="button accent" href="/portfolio">See more of my work</a></p>
+			</div>
+
+		</div>
+		
+	</section>
+	<!-- End Portfolio Block -->
+
+
+	<!-- Begin Blog Block -->
+	<section class="blog-block content light">
+		<div class="container">
+
+			<!-- Title -->
+			<!-- <div class="row">
+				<div class="center title col-lg-12">
+					<h2>From the Blog</h2>
+					<p>Ramblings about design, development, life and martial arts.</p>
+				</div>
+			</div> --><!-- END -->	
+
+			<div class="row">
+
+				<!-- Begin Posts -->
+				<div class="col-md-12">
+
+					{% for entry in craft.entries.section('blog').find() %}
+					<div class="row">
+						<div class="post image">
+							<div class="col-sm-4">
+								{% if entry.postImage | length %}
+								<div class="post-media">
+									<img src="{{ entry.postImage[0].url }}" alt="{{ entry.title }}">
+								</div>	
+								{% endif %}	
+							</div>
+							<div class="col-sm-8">
+								<div class="post-meta">
+									<h6>{{ entry.postDate|date('M d, Y') }}</h6>
+								</div>
+								<div class="post-title">
+									<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+								</div>
+													
+								<div class="post-body">
+									{{ entry.postIntro }}
+									<div>
+										<a href="{{ entry.url }}">Continue Reading...</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% else %}
+					<div class="alert alert-danger">Oh snap! No blog posts to display. Ryan needs to get his butt in gear</div>
+					{% endfor %}
+
+				</div><!-- END -->	
+
+			</div>
+		</div>
+	</section>
+	<!-- End Blog Block -->
+
+
+	{% include "_molecules/calltoaction" with {'ctaRightBtn':'portfolio'} %}
+
+
+{% endblock %}
