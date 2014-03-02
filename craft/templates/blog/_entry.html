@@ -67,7 +67,7 @@
 						<li><a href="https://plus.google.com/share?url={{ entry.url  | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-google-plus"></i></a></li>
 						<li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{ entry.url  | url_encode }}&title={{ entry.title | url_encode }}&summary={{ entry.postIntro | striptags | trim | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="http://pinterest.com/pin/create/button/?url={{ entry.url  | url_encode}}&media={{ siteUrl | trim('/') }}﻿{{ entry.postImage[0].url | url_encode }}&description={{ entry.title | url_encode }}: {{ entry.postIntro | striptags | trim | url_encode }}" class="button accent-alt sharrre-btn popup"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="mailto:?subject={{ entry.title | url_encode }}&body={{ entry.url  | url_encode}}" class="button accent-alt sharrre-btn popup"><i class="fa fa-envelope"></i></a></li>
+						<li><a href="mailto:ryan@ryanbelisle.com?subject={{ entry.title }}&body={{ entry.url | url_encode }}" class="button accent-alt sharrre-btn"><i class="fa fa-envelope"></i></a></li>
 					</ul>
 				</div>
 
