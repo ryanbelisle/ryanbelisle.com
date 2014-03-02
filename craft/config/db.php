@@ -24,10 +24,10 @@ return array(
 
     // Live database info
 	'.com' => array(
-        'server' => 'localhost',
+        'server' => 'box894.bluehost.com',
 		'user' => 'ryanbeli_dbadmin',
-		'password' => '436StaffordSt',
-		'database' => 'ryanbelisle-craft',
+		'password' => '@436StaffordSt',
+		'database' => 'ryanbeli_ryanbelisle',
     ),  
 
 );
