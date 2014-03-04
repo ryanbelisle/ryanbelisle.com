@@ -1,0 +1,50 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+	<!-- Begin Portfolio Block -->
+	<section class="portfolio-block">
+
+		<div class="container">
+
+			<!-- Title -->
+			<div class="row">
+				<div class="center title col-lg-12">
+					<h2>Selected Projects</h2>
+					<p>Full case studies and more projects are coming soon, so stay tuned!</p>
+				</div>
+			</div><!-- END -->		
+
+			<!-- Thumbnails -->
+			<ul class="portfolio-grid">
+
+				{% for entry in craft.entries.section('portfolio').find() %}
+				<!-- Thumbnail -->
+				<li class="thumbnail mix mix_all">
+					<div>
+					<a href="{{ entry.url }}">
+						<img src="{{ entry.thumbnailImage[0].url('projectThumb') }}" width="{{ entry.thumbnailImage[0].width('projectThumb') }}" height="{{ entry.thumbnailImage[0].height('projectThumb') }}" alt="{{ entry.title }}">
+						<div class="projectinfo">
+							<div class="meta">
+								<h4>{{ entry.title }}</h4>
+							</div>
+						</div>
+					</a>
+					</div>
+				</li>
+				{% endfor %}
+
+			</ul>
+			<!-- END -->
+			
+			<div class="center padded">
+				<p><a class="button accent" href="/portfolio">See more of my work</a></p>
+			</div>
+
+		</div>
+		
+	</section>
+	<!-- End Portfolio Block -->
+
+
+{% endblock %}
