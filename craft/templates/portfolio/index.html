@@ -42,7 +42,7 @@
 				<li class="thumbnail mix mix_all">
 					<div>
 					<a href="{{ entry.url }}">
-						<img src="{{ entry.thumbnailImage[0].url }}" alt="thumbnail">
+						<img src="{{ entry.thumbnailImage[0].url('projectThumb') }}" width="{{ entry.thumbnailImage[0].width('projectThumb') }}" height="{{ entry.thumbnailImage[0].height('projectThumb') }}" alt="{{ entry.title }}">
 						<div class="projectinfo">
 							<div class="meta">
 								<h4>{{ entry.title }}</h4>
