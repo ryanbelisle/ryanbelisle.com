@@ -12,25 +12,25 @@ return array(
     // Use the same in all environments
     '*' => array(
         'omitScriptNameInUrls' => true,
+        'usePathInfo' => true,﻿
     ),
 
     // Dev site config
     '.dev' => array(
         'devMode' => true,
-        'usePathInfo' => true,﻿
         'environmentVariables' => array(
             'siteUrl'        => 'http://ryanbelisle.dev/',
-            'fileSystemPath' => '../ryanbelisle/images/',
+            'fileSystemPath' => '../public/images/',
         ),
     ),
 
     // Live site config
     '.com' => array(
         'cooldownDuration' => 0,
-        'usePathInfo' => false,﻿
+
         'environmentVariables' => array(
             'siteUrl'        => 'http://ryanbelisle.com/',
-            'fileSystemPath' => '/home/ryanbeli/public_html/ryanbelisle/images/',
+            'fileSystemPath' => '/home/ryanbeli/public_html/ryanbelisle/public/images/',
         ),
     ),
 
