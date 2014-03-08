@@ -12,7 +12,7 @@ return array(
     // Use the same in all environments
     '*' => array(
         'omitScriptNameInUrls' => true,
-        // 'usePathInfo' => true,﻿
+        'usePathInfo' => false,﻿
     ),
 
     // Dev site config
@@ -20,7 +20,7 @@ return array(
         'devMode' => true,
         'environmentVariables' => array(
             'siteUrl'        => 'http://ryanbelisle.dev/',
-            'fileSystemPath' => '../public/images/',
+            'fileSystemPath' => '../ryanbelisle/images/',
         ),
     ),
 
@@ -30,7 +30,7 @@ return array(
 
         'environmentVariables' => array(
             'siteUrl'        => 'http://ryanbelisle.com/',
-            'fileSystemPath' => '/home/ryanbeli/public_html/ryanbelisle/public/images/',
+            'fileSystemPath' => '/home/ryanbeli/public_html/ryanbelisle/images/',
         ),
     ),
 
