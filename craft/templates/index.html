@@ -42,7 +42,7 @@
 				<li class="thumbnail mix mix_all">
 					<div>
 					<a href="{{ entry.url }}">
-						<img src="{{ entry.thumbnailImage[0].url }}" alt="thumbnail">
+						<img src="{{ entry.thumbnailImage[0].url('projectThumb') }}" width="{{ entry.thumbnailImage[0].width('projectThumb') }}" height="{{ entry.thumbnailImage[0].height('projectThumb') }}" alt="{{ entry.title }}">
 						<div class="projectinfo">
 							<div class="meta">
 								<h4>{{ entry.title }}</h4>
@@ -89,7 +89,7 @@
 							<div class="col-sm-4">
 								{% if entry.postImage | length %}
 								<div class="post-media">
-									<img src="{{ entry.postImage[0].url }}" alt="{{ entry.title }}">
+									<img src="{{ entry.postImage[0].url('blogThumb') }}" width="{{ entry.postImage[0].width('blogThumb') }}" height="{{ entry.postImage[0].height('blogThumb') }}" alt="{{ entry.title }}">
 								</div>	
 								{% endif %}	
 							</div>
