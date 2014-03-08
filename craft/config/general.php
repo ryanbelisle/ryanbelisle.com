@@ -12,7 +12,7 @@ return array(
     // Use the same in all environments
     '*' => array(
         'omitScriptNameInUrls' => true,
-        'usePathInfo' => true,﻿
+        // 'usePathInfo' => true,﻿
     ),
 
     // Dev site config
