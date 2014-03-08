@@ -20,7 +20,7 @@ return array(
         'devMode' => true,
         'environmentVariables' => array(
             'siteUrl'        => 'http://ryanbelisle.dev/',
-            'fileSystemPath' => '../ryanbelisle/images/',
+            'fileSystemPath' => '../public/images/',
         ),
     ),
 

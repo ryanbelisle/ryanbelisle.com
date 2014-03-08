@@ -46,7 +46,7 @@
 					{% if entry.displayPostDetailImage == "1" %}
 					{% if entry.postImage | length %}
 					<div class="post-media">
-						<img src="{{ entry.postImage[0].url('blogThumb') }}" width="{{ entry.postImage[0].width('blogThumb') }}" height="{{ entry.postImage[0].height('blogThumb') }}" alt="{{ entry.title }}">
+						<img src="{{ entry.postImage[0].url }}" alt="{{ entry.title }}">
 					</div>	
 					{% endif %}	
 					{% endif %}		
