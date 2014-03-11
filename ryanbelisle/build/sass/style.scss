@@ -1745,7 +1745,7 @@ code {
 .four-o-four {
 	width: 100%;
 	text-align: center;
-	background: #2db4d8 url(../images/404.jpg) no-repeat;
+	background: #2db4d8 /*url(../images/404.jpg) no-repeat*/;
 	background-position: 50%;
 	background-size: cover;
 }

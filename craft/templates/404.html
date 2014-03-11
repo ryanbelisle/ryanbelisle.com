@@ -1,14 +1,51 @@
-{% extends "_layout" %}
-{% set title = "404" %}
+{% include "_molecules/doctype" %}
 
-{% block content %}
-<section class="four-o-four">
-	<div class="container">
-		<h1>Oops. You are defenately lost.</h1>
-		<a class="button white" href="{{ siteUrl }}">Get back home</a>
-	</div>
-</section>
+	<head>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Javascript -->
-<script src="/js/404.js"></script>
-{% endblock %}
+		<title>Oops. You are definitely lost! - {{ siteName }}</title>
+		<link rel="home" href="{{ siteUrl }}" />
+		<meta name="description" content="Form. Responsive HTML5 template.">
+		<meta name="keywords" content="form, responsive, multi-purpose, portfolio, parallax, template, html5, agency">
+		<meta name="author" content="Ryan Belisle">
+		<meta name="google-site-verification" content="3jol6Dlq5uFGz_zzuuFXAAhp5TDuatP66Ag7WYE6SKs" />
+		
+		<meta property="og:site_name" content="Ryan Belisle">
+		{% block meta %}{% endblock %}
+
+		<link rel="shortcut icon" href="/images/favicon.png">
+		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->	
+
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400|Montserrat' rel='stylesheet' type='text/css'>
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="/css/styles.min.css">
+
+		{% include "_molecules/google" %}
+	</head>
+
+	<body>
+
+		<section class="four-o-four">
+			<div class="container">
+				<h1>Oops. You are defenately lost.</h1>
+				<a class="button white" href="{{ siteUrl }}">Get back home</a>
+			</div>
+		</section>
+
+		<!-- jQuery -->
+		<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/404.min.js"></script>
+
+	</body>
+
+</html>
