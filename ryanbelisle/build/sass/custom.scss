@@ -14,7 +14,35 @@ header.desktop {
 	width: 30%;
 }
 
+.logo {
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	-webkit-box-shadow: 1px 1px rgba(0,0,0,.2);
+	-moz-box-shadow: 1px 1px rgba(0,0,0,.2);
+	box-shadow: 1px 1px rgba(0,0,0,.2);
+}
 
+header.mobile .logo {
+	margin-left: 0;
+	float: none;
+}
+
+header.desktop.sticky .logo, 
+nav.desktop.sticky .logo,
+header.mobile.sticky .logo,
+header.mobile .logo {
+	width: 40px;
+	height: 40px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	margin-top: -5px;
+}
 
 a.site-logo {
 	color: #fff;
@@ -39,6 +67,8 @@ a.site-logo:hover {
 		 -o-transition: opacity 0.25s linear;
 			transition: opacity 0.25s linear;
 }
+
+
 
 nav.desktop {
 	width: 70%;
