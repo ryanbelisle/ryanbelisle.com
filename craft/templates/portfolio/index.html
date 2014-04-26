@@ -73,17 +73,15 @@
 					<h2>Works in Progress</h2>
 					<p>An inside peek at some things I've been working on</p>
 					<br>
-					<p><a class="button accent-alt" href="http://dribbble.com/ryanbelisle"><i class="fa fa-dribbble"></i> View on Dribbble</a></p>
+					<!-- <ul id="shotsByPlayerId" class="portfolio-grid"></ul> -->
 				</div>
 			</div><!-- END -->		
 
 			<!-- Thumbnails -->
-			<ul class="portfolio-grid">
-
-				
-
-			</ul>
+			<ul id="shotsByPlayerId" class="portfolio-grid"></ul>
 			<!-- END -->
+
+			<p class="center"><a class="button accent-alt" href="http://dribbble.com/ryanbelisle"><i class="fa fa-dribbble"></i> View more shots and follow me on Dribbble</a></p>
 
 		</div>		
 		
@@ -93,4 +91,48 @@
 	{% include "_molecules/calltoaction" with {'ctaRightBtn':'blog'} %}
 
 
+{% endblock %}
+
+{% block footerjs %}
+<script>
+var callback = function (playerShots) {
+    var html = '';
+
+    $('h2 b').text(playerShots.shots[0].player.name);
+
+    $.each(playerShots.shots, function (i, shot) {
+        html += '<li class="thumbnail dribbble-thumbnail mix mix_all" style="display: block; opacity: 1;">';
+        html += '<div>';
+        html += '<a href="' + shot.url + '">';
+        html += '<img src="' + shot.image_url + '" alt="' + shot.title + '" width="361" height="271">';
+        html += '<div class="projectinfo">';
+        html += '<div class="meta">';
+        html += '<h4>' + shot.title + '</h4>';
+        html += '</div></div></a></div></li>';
+    });
+
+    $('#shotsByPlayerId').html(html);
+
+    //HOVERS
+	$('.dribbble-thumbnail a').hover(function() {
+		$(this).children('.projectinfo').fadeIn('fast', function(){
+			$(this).children('.meta').animate({
+				bottom: 55 + "px"
+			});
+		});
+	}, function() {
+		$(this).children('.projectinfo').fadeOut('fast', function(){
+			$(this).children('.meta').animate({
+				bottom: - 55 + "px"
+			}, 1);
+		});
+	});
+};
+
+$.jribbble.getShotsByPlayerId('ryanbelisle', callback, {page: 1, per_page: 9});
+
+
+
+</script>
+		
 {% endblock %}
